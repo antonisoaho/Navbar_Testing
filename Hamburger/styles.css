@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  background-color: rgb(170, 170, 170);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+
+.hamburger {
+  width: 80px;
+  height: 50px;
+  border-radius: 999px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background: grey;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.hamburger input {
+  opacity: 0;
+  position: absolute;
+  z-index: 3;
+  cursor: pointer;
+  width: 80px;
+  height: 50px;
+  border-radius: 99999px;
+}
+
+.hamburger .stripes {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: #5d3bf7;
+  border-radius: 3px;
+  z-index: 2;
+
+  transform-origin: 4px 0px;
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+.hamburger .stripes:first-child {
+  transform-origin: 0% 0%;
+}
+
+.hamburger .stripes:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+.hamburger input:checked ~ .stripes {
+  opacity: 1;
+  transform: rotate(45deg) translate(6px, 0px);
+  background: #d4d4d4;
+}
+
+.hamburger input:checked ~ .stripes:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.1, 0.1);
+}
+
+.hamburger input:checked ~ .stripes:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, 7px);
+}
+
+.hamburger input:checked ~ .myItems {
+  left: -1rem;
+  top: -1rem;
+}
+.myItems {
+  top: -236px;
+  height: 230px;
+  width: 160px;
+  left: -200px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: aliceblue;
+  transition: 0.4s;
+  border-radius: 0 0 10px 0;
+  padding-bottom: 10px;
+}
+
+.menuOptions {
+  width: 100%;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  font-size: 1.5rem;
+  z-index: 1;
+}
+nav a:nth-child(1):hover ~ .mover {
+  left: 0;
+  top: 74px;
+  height: 30px;
+  width: 160px;
+}
+nav a:nth-child(2):hover ~ .mover {
+  left: 0;
+  top: 103px;
+  height: 30px;
+  width: 160px;
+}
+nav a:nth-child(3):hover ~ .mover {
+  left: 0;
+  top: 132px;
+  height: 30px;
+  width: 160px;
+}
+nav a:nth-child(4):hover ~ .mover {
+  left: 0;
+  top: 161px;
+  height: 30px;
+  width: 160px;
+}
+nav a:nth-child(5):hover ~ .mover {
+  left: 0;
+  top: 190px;
+  height: 30px;
+  width: 160px;
+}
+
+.myItems .mover {
+  position: absolute;
+  opacity: 0;
+  top: 17px;
+  left: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background: linear-gradient(45deg, #391aa8, #2c52fa);
+}
+
+.hamburger input:checked ~ .myItems > .mover {
+  opacity: 1;
+  transition: 0.7s;
+  /* transition: 0.5s; */
+}
+
+@media (min-width: 600px) {
+  .menuOptions {
+    width: 160px;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    font-size: 1.5rem;
+    z-index: 1;
+  }
+
+  .myItems .mover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(45deg, #391aa8, #2c52fa);
+    transition: 0.5s;
+  }
+
+  nav a:nth-child(2):hover ~ span {
+    left: 160px;
+  }
+  nav a:nth-child(3):hover ~ span {
+    left: 320px;
+  }
+  nav a:nth-child(4):hover ~ span {
+    left: 480px;
+  }
+  nav a:nth-child(5):hover ~ span {
+    left: 640px;
+  }
+}
