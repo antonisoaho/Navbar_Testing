@@ -158,7 +158,6 @@ nav a:nth-child(5):hover ~ .mover {
 .hamburger input:checked ~ .myItems > .mover {
   opacity: 1;
   transition: 0.7s;
-  /* transition: 0.5s; */
 }
 /* 
 @media (min-width: 600px) {
