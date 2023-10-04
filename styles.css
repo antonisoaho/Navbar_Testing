@@ -160,7 +160,7 @@ nav a:nth-child(5):hover ~ .mover {
   transition: 0.7s;
   /* transition: 0.5s; */
 }
-
+/* 
 @media (min-width: 600px) {
   .menuOptions {
     width: 160px;
@@ -196,4 +196,4 @@ nav a:nth-child(5):hover ~ .mover {
   nav a:nth-child(5):hover ~ span {
     left: 640px;
   }
-}
+} */
