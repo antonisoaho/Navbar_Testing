@@ -1,19 +1,12 @@
-function unCheck(checkbox) {
-  if (checkbox.checked) {
-    console.log("Window screen too wide");
-    checkbox.checked = false;
-  }
-}
-
 function screenWidthChange(mediaQuery) {
   const checkbox = document.getElementById("showMenu");
 
   if (mediaQuery.matches) {
     checkbox.disabled = true;
     checkbox.checked = false;
-    console.log("Window > 860px");
+    console.log("Window larger then 860px");
   } else {
-    console.log("Window < 860px");
+    console.log("Window smaller then 860px");
     checkbox.disabled = false;
   }
 }
