@@ -18,6 +18,9 @@ function screenWidthChange(mediaQuery) {
     console.log("Window smaller then 860px");
     checkbox.disabled = false;
     checkbox.checked = false;
+    for (let i = 0; i < menuOpt.length; i++) {
+      menuOpt[i].style.display = "inline-block";
+    }
   }
 }
 
