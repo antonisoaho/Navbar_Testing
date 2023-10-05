@@ -21,6 +21,8 @@ body {
   padding: 1rem;
 }
 
+/* Navbar */
+
 .hamburger {
   width: 80px;
   height: 50px;
@@ -86,15 +88,16 @@ body {
 }
 
 .hamburger input:checked ~ .myItems {
-  left: -1rem;
+  /* left: -1rem; */
   opacity: 1;
   background-color: inherit;
+  display: flex;
 }
 .myItems {
   top: -1rem;
   height: 230px;
   width: 160px;
-  left: -200px;
+  left: -1rem;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -115,6 +118,7 @@ body {
   font-size: 1.5rem;
   z-index: 1;
   opacity: 0;
+  display: none;
 }
 
 .myItems .mover {
@@ -122,22 +126,23 @@ body {
   opacity: 0;
   top: 17px;
   left: 30px;
-  width: 0;
-  height: 0;
+  width: 50px;
+  height: 50px;
   border-radius: 25px;
   background: linear-gradient(45deg, #391aa8, #2c52fa);
 }
 
 .hamburger input:checked ~ .myItems > .mover {
-  opacity: 1;
-  transition: 0.3s;
+  opacity: 0.8;
+  transition: 0.6s 0.1s;
   width: 50px;
   height: 50px;
 }
 .hamburger input:checked ~ .myItems > .menuOptions {
-  opacity: 1;
+  opacity: 0.8;
   transition: 0.7s;
   color: rgba(0, 0, 0, 1);
+  display: inline-block;
 }
 
 .myItems .menuOptions:nth-child(1):hover ~ .mover {
@@ -145,33 +150,41 @@ body {
   top: 74px;
   height: 30px;
   width: 160px;
+  transition: 0.3s;
 }
 .myItems .menuOptions:nth-child(2):hover ~ .mover {
   left: 0;
   top: 103px;
   height: 30px;
   width: 160px;
+  transition: 0.3s;
 }
 .myItems .menuOptions:nth-child(3):hover ~ .mover {
   left: 0;
   top: 132px;
   height: 30px;
   width: 160px;
+  transition: 0.3s;
 }
 .myItems .menuOptions:nth-child(4):hover ~ .mover {
   left: 0;
   top: 161px;
   height: 30px;
   width: 160px;
+  transition: 0.3s;
 }
 .myItems .menuOptions:nth-child(5):hover ~ .mover {
   left: 0;
   top: 190px;
   height: 30px;
   width: 160px;
+  transition: 0.3s;
 }
 
+/* Main */
+
 @media (min-width: 860px) {
+  /* Navbar */
   input {
     display: none;
   }
@@ -207,7 +220,7 @@ body {
     font-size: 1.5rem;
     z-index: 1;
     flex: 1;
-    opacity: 1;
+    opacity: 0.8;
     transition: opacity 1.2s ease-in;
   }
 
@@ -219,36 +232,41 @@ body {
     height: 100%;
     border-radius: 20px;
     background: linear-gradient(45deg, #391aa8, #2c52fa);
-    transition: 0.5s;
+    transition: 0.5s 0.1s;
     opacity: 1;
   }
   .myItems .menuOptions:nth-child(1):hover ~ .mover {
     top: 0;
     height: 100%;
     width: 160px;
+    transition: 0.3s;
   }
   .myItems .menuOptions:nth-child(2):hover ~ .mover {
     left: 160px;
     top: 0;
     height: 100%;
     width: 160px;
+    transition: 0.3s;
   }
   .myItems .menuOptions:nth-child(3):hover ~ .mover {
     left: 320px;
     top: 0;
     height: 100%;
     width: 160px;
+    transition: 0.3s;
   }
   .myItems .menuOptions:nth-child(4):hover ~ .mover {
     left: 480px;
     top: 0;
     height: 100%;
     width: 160px;
+    transition: 0.3s;
   }
   .myItems .menuOptions:nth-child(5):hover ~ .mover {
     left: 640px;
     top: 0;
     height: 100%;
     width: 160px;
+    transition: 0.3s;
   }
 }
